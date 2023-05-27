@@ -1,0 +1,150 @@
+#profile{
+    background: #8ae600;
+  }
+
+  #profile:after{
+    color: #8ae600;
+  }
+  * {
+    margin: 0 auto;
+    transition: 0.5s ease all;
+  }
+  *:focus {
+    outline: none;
+  }
+  body {
+    margin: 0 auto;
+    background: #1d1f20;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    color: #F4F4F8;
+  }
+  #wrapper {
+    width: 50%;
+    background: #009FB7;
+    padding: 0px 80px 40px;
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 10%;
+    z-index: 998;
+    position: relative;
+    overflow: hidden;
+    margin-right: 30%;
+    border-radius: 30px;
+    /*box-shadow: 30px 25px 30px 0px #dddbe0;*/
+  }
+  #signup {
+    width: 100%;
+  }
+  #line {
+    width: 25px;
+    height: 2px;
+    background: white;
+    margin-left: 15px;
+  }
+  h2 {
+    padding: 25px 0px;
+    width: 90%;
+    font-weight: 100;
+    font-size: 40px;
+    letter-spacing: 3px;
+    margin-left:7%;
+  }
+  #form {
+    width: 90%;
+    padding-top: 5%;
+  }
+  .formfield {
+    position: relative;
+  }
+  button{
+    padding: 5px 15px;
+    background: none;
+    border: none;
+    /*border: solid 1px #F4F4F8;*/
+    font-family: sans-serif;
+    color: #F4F4F8;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    font-weight: lighter;
+    margin: 25px 0px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 2px #F4F4F8;
+  }
+  button:hover, button:active, button:focus {
+    /*border: solid 1px #fc4144;*/
+    box-shadow: none;
+    cursor: pointer;
+    /*box-shadow: inset 90px 0px 0px 1px #fc4144;*/
+  }
+  input[type="text"], input[type="email"], textarea, option, select {
+    padding: 3px;
+    width: 100%;
+    background: none;
+    border: none;
+    border-bottom: solid 1px #ff9b9d;
+    margin-bottom: 10px;
+    font-family: sans-serif;
+    color: #F4F4F8;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    font-weight: lighter;
+  }
+  input[type="password"] {
+    letter-spacing: 4px;
+  }
+  input[type="text"]:hover, input[type="text"]:active, input[type="text"]:focus, input[type="text"]:valid, input[type="email"]:hover, input[type="email"]:active, input[type="email"]:focus, input[type="email"]:valid, textarea:hover, textarea:active, textarea:focus, textarea:valid {
+    border-bottom: solid 20px #c61aff;
+  }
+
+  option:hover, option:active, option:focus, option:valid {
+    border-bottom: solid 20px #c61aff;
+  }
+
+  option {
+    background: #c61aff;
+  }
+
+  label {
+    position: relative;
+    left: 5px;
+    top: 5px;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    font-weight: bold;
+  }
+  input[type="text"]:hover + label, input[type="text"]:active + label, input[type="text"]:focus + label, input[type="text"]:valid + label, input[type="password"]:hover + label, input[type="password"]:active + label, input[type="password"]:focus + label, input[type="password"]:valid + label {
+    font-size: 10px;
+    color: #ff9b9d;
+    top: 26px;
+  }
+
+  textarea:hover + label, textarea:active + label, textarea:focus + label, textarea:valid + label {
+    font-size: 10px;
+    color: #ff9b9d;
+    top: 26px;
+  }
+
+  input[type="email"]:hover + label, input[type="email"]:active + label, input[type="email"]:focus + label, input[type="email"]:valid + label {
+    font-size: 10px;
+    color: #ff9b9d;
+    top: 26px;
+  }
+
+  #expand {
+    content: '';
+    background: #c61aff;
+    height: 0px;
+    width: 0px;
+    top: 35px;
+    left: 35px;
+    z-index: -10000;
+    transition: 1s ease all;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+  button:hover + #expand, button:active + #expand, button:focus + #expand {
+    height: 700px;
+    width: 700px;
+  }
