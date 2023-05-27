@@ -76,14 +76,14 @@ include 'header.php';
 
             <!-- shop -->
             <div class="col-md-4 col-xs-6">
-                <a href="product.php?p=72">
+                <a href="accesories.php">
                     <div class="shop">
                         <div class="shop-img">
                             <img src="./img/accesorios.jpg" alt="">
                         </div>
                         <div class="shop-body">
                             <h3>Colección de<br>accesorios</h3>
-                            <a href="#"  class="cta-btn" data-categoria="accesorios">Comprar ahora! <i class="fa fa-arrow-circle-right"></i></a>
+                            <a href="accesories.php"  class="cta-btn" data-categoria="accesorios">Comprar ahora! <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </a>
