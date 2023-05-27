@@ -1,0 +1,158 @@
+/* Estilos generales del carrito */
+#cart {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  #cart th,
+  #cart td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  /* Estilos de cada producto en el carrito */
+  #cart .row {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    
+  }
+  
+  #cart img {
+    height: 70px;
+    width: 75px;
+    margin-right: 10px;
+  }
+  
+  #cart .product-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  #cart .description {
+    max-width: 200px;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  #cart .price {
+    width: 80px;
+  }
+  
+  #cart .qty {
+    width: 60px;
+  }
+  
+  #cart .total {
+    width: 80px;
+  }
+  
+  #cart .actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  #cart .actions .btn {
+    margin-right: 5px;
+  }
+  
+  #cart .actions .btn ion-icon {
+    font-size: 16px;
+  }
+  
+  /* Estilos para el botón "Continuar Comprando" y el total */
+  #cart .btn-warning {
+    color: #fff;
+    background-color: #ffc107;
+    border-color: #ffc107;
+  }
+  
+  #cart .net_total {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Estilos para el botón "Finalizar Compra" */
+  #cart .btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  /* Estilos para las alertas */
+  #cart .alert {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  #cart .alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+  
+  #cart .alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+  
+  #cart .alert-warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #ffeeba;
+  }
+
+  .description-limit {
+    max-width: 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .description-limit.expanded {
+    max-width: 100%;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    font-size: 14px;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .btn-warning {
+    color: #fff;
+    background-color: #ffc107;
+    border-color: #ffc107;
+  }
+  
+  .btn-success {
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+
+  .btn-group {
+    margin-top: 50px;
+  }
+  .btn-group.bottom {
+    margin-top: 80px;
+  }
+  
+  a{
+    text-decoration: none;
+    color: #fff;
+  }
