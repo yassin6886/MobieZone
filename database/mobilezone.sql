@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-05-2023 a las 21:21:33
+-- Tiempo de generación: 27-05-2023 a las 15:43:34
 -- Versión del servidor: 10.4.17-MariaDB
 -- Versión de PHP: 8.0.1
 
@@ -110,14 +110,19 @@ INSERT INTO `cart` (`id`, `p_id`, `ip_add`, `user_id`, `qty`) VALUES
 (61, 0, '127.0.0.1', -1, 41),
 (62, 0, '127.0.0.1', 2, 1),
 (63, 0, '127.0.0.1', 4, 1),
-(99, 2, '127.0.0.1', -1, 6),
+(99, 2, '127.0.0.1', -1, 7),
 (100, 2, '127.0.0.1', 1, 4),
 (101, 1, '127.0.0.1', -1, 1),
-(102, 6, '127.0.0.1', -1, 1),
+(102, 6, '127.0.0.1', -1, 2),
 (105, 1, '127.0.0.1', 2, 2),
 (106, 3, '127.0.0.1', 2, 2),
-(107, 4, '127.0.0.1', 2, 1),
-(108, 5, '127.0.0.1', 2, 1);
+(107, 4, '127.0.0.1', 2, 2),
+(108, 5, '127.0.0.1', 2, 1),
+(109, 12, '127.0.0.1', -1, 4),
+(110, 11, '127.0.0.1', -1, 3),
+(111, 11, '127.0.0.1', 2, 3),
+(112, 12, '127.0.0.1', 2, 4),
+(113, 2, '127.0.0.1', 2, 4);
 
 -- --------------------------------------------------------
 
@@ -269,7 +274,9 @@ INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_t
 (7, 1, 1, 'Iphone 14 pro max', 1500, 'DIMENSIONES Y PESO  160,7 x 77,6 x 7,85 mm 240g  PANTALLA  Super Retina XDR 6,7 pulgadas True Tone, HDR ProMotion 120 Hz 2.778 x 1.284 px, 458 ppp 2.000 nits, contraste 2.000.000:1 Pantalla siempre activa Isla dinámica  PROCESADOR  Apple A16 Bionic  RAM  6 GB LPDDR5X  ALMACENAMIENTO  128/256/512 GB/1 TB  CÁMARAS TRASERAS  Principal:48MP, f/1.78, 24mm, Sensor Shift de segunda generación Ultra angular: 12MP, f/2.2, 13mm Teleobjetivo: 12MP, f/2.8, 77mm, OIS CÁMARA FRONTAL  12MP, f1.9, enfoque automático  SISTEMA OPERATIVO  iOS 16  CONECTIVIDAD  5G (sub-6 GHz) LTE Gigabit con MIMO 4x4 y LAA Wifi 802.11ax (6.ª gen.) con MIMO 2x2 Bluetooth 5.3 Chip de banda ultraancha NFC  BATERÍA  4.323 mAh Carga rápida 20W Carga inalámbrica 15W  OTROS  IP68 Sonido estéreo FaceID', '1682705642_iphone14ProMax.jpg', 'Iphone mobile electronics', 'mobile'),
 (8, 1, 3, 'oneplus 11 pro', 1000, 'DIMENSIONES Y PESO  168,1mm x 74,1 x 8,53mm 205 gramos de peso  PANTALLA  AMOLED LTPO de 6,7 pulgadas Resolución QHD+ 1- 120 Hz de tasa de refresco Brillo pico de 1.300 nits  PROCESADOR  Qualcomm Snapdragon 8 Gen 2  RAM  8/16 GB LPDDR5X  ALMACENAMIENTO  128/256 GB UFS4.0  CÁMARA DELANTERA  16 Mpx  CÁMARAS TRASERAS  Principal: 50 MP Gran angular: 48 MP Teleobjetivo: 32 MP, zoom 2x  BATERÍA  5.000 mAh Carga rápida de hasta 100 W  SOFTWARE  OxygenOS 13 basado en Android 13  CONECTIVIDAD  5G WiFi 6e Bluetooth 5.3 GPS NFC USB-C  OTROS  Sensor de huellas en pantalla Certificación IP68 frente al agua y al polvo Alert Slider', '1682705756_oneplus11pro.jpg', 'oneplus mobile electronics', 'mobile'),
 (9, 1, 2, 'Samsung galaxy s22 Ultra', 1300, 'PANTALLA  AMOLED de 6,8 pulgadas Resolución QHD+ a 3.080 x 1.440 Refresco adaptativo de 1 a 120Hz Refresco táctil de 240Hz en Modo Juego Brillo de 1.750 nits Contraste de 3.000.000:1 100% DCI-P3 Panel perforado Gorilla Glass Victus  PROCESADOR  Exynos 2200 a 2,8GHz GPU AMD  VERSIONES  8GB/128GB 12GB/256GB 12GB/512GB 12GB/1TB  CÁMARAS TRASERAS  Principal: 108 megapíxeles f/1.8 OIS Angular: 12 megapíxeles f/.22 120º 13mm Zoom: 10 megapíxeles f/2.4 OIS 3X 69mm Zoom: 10 megapíxeles f/4.9 OIS 10X 230mm  CÁMARA FRONTAL  40 megapíxeles f/2.2 25mm  BATERÍA  5.000 mAh Carga rápida de 45W Carga inalámbrica de 15W  SISTEMA  Android 12 One UI 4.1  CONECTIVIDAD  5G (2xNano + eSIM) WiFi 6E Bluetooth 5.2 GPS NFC UWB USB tipo C 3.2  DIMENSIONES Y PESO  163,3 x 77,9 x 8,9 milímetros 227 gramos  OTROS  IP68 Compatible con Samsung DeX S-Pen con 2,8ms de latencia', '1682705904_samsung_galaxy_s22Ultra.jpg', 'samsung mobile electronics', 'mobile'),
-(10, 1, 5, 'XiIAOMI 13 PRO', 1400, 'PANTALLA  OLED 6,73\" 3200 x 1440 120 Hz 240 Hz respuesta táctil  DIMENSIONES Y PESO  162,8 x 74,6 x 8,38 mm 229 g.  PROCESADOR  Snapdragon 8 Gen 2  RAM  12 GB  ALMACENAMIENTO  256 GB  CÁMARA FRONTAL  32 MP  CÁMARA TRASERA  50 MP f/1.9 50 MP f/2.0 tele 50 MP f/2.2 UGA  BATERÍA  4820 mAh Carga rápida 120W Carga inalámbrica 50W Carga inalámbrica inversa 10W  SISTEMA OPERATIVO  MIUI 14  CONECTIVIDAD  5G Wi-Fi 6E Bluetooth 5.3 NFC IR-Blaster  OTROS  Lector de huellas en la pantalla Altavoces estéreo Dolby Atmos IP68', '1682706014_Xiaomi-13pro.jpg', 'Xiaomi mobile electronics', 'mobile');
+(10, 1, 5, 'XiIAOMI 13 PRO', 1400, 'PANTALLA  OLED 6,73\" 3200 x 1440 120 Hz 240 Hz respuesta táctil  DIMENSIONES Y PESO  162,8 x 74,6 x 8,38 mm 229 g.  PROCESADOR  Snapdragon 8 Gen 2  RAM  12 GB  ALMACENAMIENTO  256 GB  CÁMARA FRONTAL  32 MP  CÁMARA TRASERA  50 MP f/1.9 50 MP f/2.0 tele 50 MP f/2.2 UGA  BATERÍA  4820 mAh Carga rápida 120W Carga inalámbrica 50W Carga inalámbrica inversa 10W  SISTEMA OPERATIVO  MIUI 14  CONECTIVIDAD  5G Wi-Fi 6E Bluetooth 5.3 NFC IR-Blaster  OTROS  Lector de huellas en la pantalla Altavoces estéreo Dolby Atmos IP68', '1682706014_Xiaomi-13pro.jpg', 'Xiaomi mobile electronics', 'mobile'),
+(11, 1, 2, 'Galaxy Tab S8 Ultra 5G', 1799, 'DIMENSIONES Y PESO\r\n\r\n326,4 x 208,6 x 5,5 mm\r\n726 g (Wi-Fi)\r\n\r\nPANTALLA\r\n\r\n14,6\" SuperAMOLED\r\n2.960 x 1.848 px\r\n120 Hz\r\nGorilla Glass 5\r\n\r\nPROCESADOR\r\n\r\nQualcomm Snapdragon 8 Gen 1\r\n\r\nRAM\r\n\r\n8 / 12 / 16 GB\r\n\r\nMEMORIA INTERNA\r\n\r\n128 / 256 / 512 GB + microSD\r\n\r\nBATERÍA\r\n\r\n11.200 mAh\r\nCarga rápida hasta 45W\r\n\r\nCÁMARAS\r\n\r\nTrasera: 13 MP + 6 MP gran angular\r\nFrontal: 12 MP + 12 MP gran angular\r\n\r\nSISTEMA OPERATIVO\r\n\r\nAndroid 12.0\r\nOne UI 4 Tab\r\n\r\nAUDIO\r\n\r\nCuatro altavoces estéreo, Dolby Atmos, AKG, tres micrófonos\r\n\r\nCONECTIVIDAD\r\n\r\n5G, LTE, Wi-Fi 6E, BT 5.2\r\n\r\nOTRO\r\n\r\nUSB tipo C, lector de huellas bajo pantalla, compatible con S Pen, Samsung Knox', 'Galaxy Tab S8 Ultra 5G.jpg', 'samsung tablet electronics', 'tablet'),
+(12, 1, 1, 'Airpods 3', 220, 'DIMENSIONES Y PESO\r\n\r\n30,8 x 18,3 mm\r\n4,28 g\r\n\r\nDIMENSIONES Y PESO DE LA BASE DE CARGA\r\n\r\n46,4 x 54,4 x 21,4 mm\r\n37,9 g\r\n\r\nBATERÍA\r\n\r\nHasta 6 horas (con una sola carga)\r\nHasta 30 horas de reproducción (con la base de carga)\r\n\r\nRESISTENCIA\r\n\r\nIPX4\r\n\r\nCHIP\r\n\r\nH1 para auriculares\r\n\r\nTECNOLOGÍA\r\n\r\nEcualización adaptativa, soporte audio espacial con seguimiento de la cabeza y Dolby Atmos, códec AAC-ELD, Bluetooth 5.0\r\n\r\nSENSORES\r\n\r\nDos micrófonos, sensor de piel, sensor de presión, acelerómetro con detección de movimiento y voz', 'airpods3.jpg', 'iphone accesories electronics', 'accesories');
 
 -- --------------------------------------------------------
 
@@ -407,7 +414,7 @@ ALTER TABLE `cards`
 -- AUTO_INCREMENT de la tabla `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`
@@ -449,7 +456,7 @@ ALTER TABLE `order_products`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `product_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `user_info`
