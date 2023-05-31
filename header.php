@@ -18,8 +18,13 @@ session_start();
   <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <!--iconos-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
@@ -31,9 +36,9 @@ session_start();
       <div class="container">
 
         <ul class="header-links pull-left">
-          <li><a href="#"><ion-icon class="ionicon" name="bi bi-telephone-fill"></ion-icon> +34 910364872</a></li>
-          <li><a href="#"><i class="fa fa-envelope-o"></i> mobileZone@gmail.com</a></li>
-          <li><a href="#"><i class="fa fa-map-marker"></i>España</a></li>
+          <li><a href="#"><ion-icon class="ionicon" name="call-outline"></ion-icon> +34 910364872</a></li>
+          <li><a href="#"><ion-icon class="ionicon" name="mail-unread-outline"></ion-icon> mobileZone@gmail.com</a></li>
+          <li><a href="#"><ion-icon class="ionicon" name="location-outline"></ion-icon>España</a></li>
         </ul>
       </div>
   </div>  

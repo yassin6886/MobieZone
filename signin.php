@@ -21,10 +21,10 @@ if (isset($_POST["login_user_with_product"])) {
         <label>Contraseña:</label><br>
         <input type="password" name="contra" placeholder="Introduzca su contraseña" /><br>
         <br>
-        <input type="submit" class="boton" name="iniciar" value="Iniciar Sesión" /><br>
+        <input type="submit" id="inicio"  class="boton" name="iniciar" value="Iniciar Sesión" /><br>
         <br>
         <label>¿No te has registrado todavía? Regístrtate con el siguiente botón.</label>
-        <input type="submit" class="boton" name="registro" value="Registrarme" formaction="signup.php" />
+        <input type="submit" class="boton" id="registrarse" name="registro" value="Registrarme" formaction="signup.php" />
     </form>
 </div>
 <?php

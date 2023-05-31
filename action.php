@@ -780,7 +780,7 @@ if (isset($_POST["Common"])) {
 				if (!isset($_SESSION["uid"])) {
 					echo '
 					
-							<a id="reg" href="" data-toggle="modal" data-target="#Modal_register" class="btn btn-success"><ion-icon class="ionicon" name="bag-check-outline"></ion-icon>Finalizar Compra</a></td>
+							<a id="reg" href="signup.php"  data-target="#Modal_register" class="btn btn-success"><ion-icon class="ionicon" name="bag-check-outline"></ion-icon>Finalizar Compra</a></td>
 								</tr>
 							</tfoot>
 				

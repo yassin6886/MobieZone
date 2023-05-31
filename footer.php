@@ -1,19 +1,19 @@
 <footer id="footer">
 			<!-- top footer -->
-			<div class="section">
+			<div class="section" style="margin-bottom:0; padding-bottom:0;">
 				<!-- container -->
 				<div class="container">
 					<!-- row -->
-					<div class="row">
+					<div class="row" style="margin:0; padding:0;">
 
 						<div class="col-md-4 col-xs-6">
 							<div class="footer">
 								<h3 class="footer-title">Sobre nosotros</h3>
 								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
 								<ul class="footer-links">
-									<li><a href="#"><i class="fa fa-map-marker"></i> Madrid, España</a></li>
-									<li><a href="#"><i class="fa fa-phone"></i> +34 910364872</a></li>
-									<li><a href="#"><i class="fa fa-envelope-o"></i> mobilezone@gmail.com</a></li>
+									<li><a href="#"><ion-icon class="ionicon" name="location-outline"></ion-icon> Madrid, España</a></li>
+									<li><a href="#"><ion-icon class="ionicon" name="call-outline"></ion-icon> +34 910364872</a></li>
+									<li><a href="#"><ion-icon class="ionicon" name="mail-unread-outline"></ion-icon> mobilezone@gmail.com</a></li>
 								</ul>
 							</div>
 						</div>
@@ -49,7 +49,7 @@
 			<!-- /top footer -->
 
 			<!-- bottom footer -->
-			<div id="bottom-footer" class="section">
+			<div id="bottom-footer" class="section" style="margin-top:0; padding-top:0;">
 				<div class="container">
 					<!-- row -->
 					<div class="row">
@@ -79,6 +79,7 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="js/product.js"></script>
+<script src="js/jquery.payform.min.js" charset="utf-8"></script>
 <script>
 $(document).on('click', '.description-limit', function() {
   $(this).toggleClass('expanded');

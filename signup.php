@@ -27,11 +27,11 @@ include 'header.php';
     <label>Repita la contraseña:</label><br>
     <input type="password" name="repetircontra" placeholder="Repita su contraseña" /><br>
     <br>
-    <input type="submit" class="boton" name="Registrar" value="Resgistrarme" /><br>
+    <input type="submit" class="boton" name="Registrar" id="registrar" value="Resgistrarme" /><br>
     <br>
     <label>¿Ya estás registrado? Inicia sesión con el siguiente botón.</label>
     <br>
-    <input type="submit" class="boton" name="" value="Iniciar Sesión" formaction="signin.php" />
+    <input type="submit" class="boton" name="" id="iniciar" value="Iniciar Sesión" formaction="signin.php" />
 </form>
 <div id="signup_msg">
                                     
