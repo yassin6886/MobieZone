@@ -11,11 +11,11 @@ body{
   }
 
   #profile{
-    background: #8ae600;
+    background: #E6344A;
   }
 
   #profile:after{
-    color: #8ae600;
+    color: #E6344A;
   }
 
   .box{
@@ -98,7 +98,7 @@ body{
   .card .details h2 span{
   font-weight: 500;
   font-size: 16px;
-  color: #f38695;
+  color: #E6344A;
   display: block;
   margin-top: 5px;
   margin-bottom: 5px;
@@ -111,11 +111,11 @@ body{
 }
 
 .a{color: #E7484F}
-.b{color: #F68B1D}
-.c{color: #FCED00}
-.d{color: #009E4F}
-.e{color: #00AAC3}
-.f{color:  #732982}
+.b{color: #E6344A}
+.c{color: #e8384d}
+.d{color: #e33347}
+.e{color: #ea3046}
+.f{color:  #ea3046}
 
 
 .container{
@@ -136,17 +136,17 @@ body{
 }
 
 .rainbow-1:hover{
-   background-image: linear-gradient(90deg, #00C0FF 0%, #FFCF00 49%, #FC4F4F 80%, #00C0FF 100%);
+   background-image: linear-gradient(90deg, #E7484F 0%, #E6344A 49%, #e8384d 80%, #e33347 100%);
    animation:slidebg 5s linear infinite;
 }
 
 .rainbow-2:hover{
-  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
+  background-image: linear-gradient(to right, #E7484F,#E6344A,#e8384d,#e33347,#ea3046,#ea3046,#E6344A #E7484F);
   animation:slidebg 2s linear infinite;
 }
 
 .rainbow-3:hover{
-  background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, red);
+  background-image: linear-gradient(to right, #E7484F,#E6344A,#e8384d,#e33347,#ea3046,#ea3046,#E6344A);
   animation:slidebg 2s linear infinite;
 }
 
@@ -154,11 +154,11 @@ body{
    background-image:     linear-gradient(
       to right, 
       #E7484F,
-      #F68B1D, 
-      #FCED00,
-      #009E4F,
-      #00AAC3,
-      #732982
+      #E6344A,
+      #e8384d,
+      #e33347,
+      #ea3046,
+      #ea3046,
     );
   animation:slidebg 2s linear infinite;
 }
@@ -169,16 +169,16 @@ body{
       to right, 
       #E7484F,
       #E7484F 16.65%,
-      #F68B1D 16.65%,
-      #F68B1D 33.3%,
-      #FCED00 33.3%,
-      #FCED00 49.95%,
-      #009E4F 49.95%,
-      #009E4F 66.6%,
-      #00AAC3 66.6%,
-      #00AAC3 83.25%,
-      #732982 83.25%,
-      #732982 100%,
+      #e8384d 16.65%,
+      #e33347 33.3%,
+      #ea3046 33.3%,
+      #ea3046 49.95%,
+      #ea3046 49.95%,
+      #ea3046 66.6%,
+      #e33347 66.6%,
+      #e33347 83.25%,
+      #e8384d 83.25%,
+      #E7484F 100%,
       #E7484F 100%
      
      

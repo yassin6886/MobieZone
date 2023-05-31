@@ -1,4 +1,59 @@
-document.getElementById('enviar').addEventListener('click', function() {
+/**Contactnos */
+$("#enviarForm").on("click", function(event) {
+  event.preventDefault();
+  $(".overlay").show();
+
+  var name = $("#name").val();
+  var email = $("#email").val();
+  var num = $("#num").val();
+  var mens = $("#mens").val();
+
+  var formData = {
+    name: name,
+    email: email,
+    num: num,
+    mens: mens
+  };
+
+  console.log(formData);
+
+  $.ajax({
+    url: "contact.php",
+    method: "POST",
+    data: formData,
+    success: function(data) {
+      $(".overlay").hide();
+      $("#response-msg").html(data);
+
+      // Borra el contenido del formulario
+      $("#name").val("");
+      $("#email").val("");
+      $("#num").val("");
+      $("#mens").val("");
+
+    }
+  });
+});
+
+
+
+/**cancelar */
+$("#cancelarForm").on("click", function(event) {
+  event.preventDefault();
+  
+  // Restablecer los valores de los campos del formulario
+  $("#name").val("");
+  $("#email").val("");
+  $("#num").val("");
+  $("#mens").val("");
+});
+
+
+
+/**Tarjeta */
+
+
+  document.getElementById('enviar').addEventListener('click', function() {
     // Obtener los datos de registro
     const cardnumber = document.getElementById('inputNumero').value;
     const cardname = document.getElementById('inputNombre').value;
@@ -17,7 +72,6 @@ document.getElementById('enviar').addEventListener('click', function() {
         cvv: cvv
       },
       success: function(data) {
-        alert('enviando datos');
         // Acciones a tomar cuando la solicitud AJAX se haya completado correctamente
         console.log('Registro de tarjeta exitoso');
         // Redirigir a otra página, por ejemplo:
@@ -31,3 +85,4 @@ document.getElementById('enviar').addEventListener('click', function() {
     });
   });
   
+
