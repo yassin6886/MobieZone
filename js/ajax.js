@@ -422,7 +422,11 @@ $(document).ready(function(){
 	})
 
 	/****Funcion de logearse******/
-	$("#login").on("submit",function(event){
+	$("#iniciar").on("click", function() {
+		window.location.href = "signin.php";
+	});
+
+	$("#inicio").on("click",function(event){
 		event.preventDefault();
 		$(".overlay").show();
 		$.ajax({
@@ -443,8 +447,12 @@ $(document).ready(function(){
 	})
 	//end
 
-	/****obtiene informacion del usuario logeado******/
-	$("#signup_form").on("submit",function(event){
+	/****Funcion de registrarse******/
+	$("#registrarse").on("click", function() {
+		window.location.href = "signup.php";
+	});
+
+	$("#registrar").on("click",function(event){
 		event.preventDefault();
 		$(".overlay").show();
 		$.ajax({
