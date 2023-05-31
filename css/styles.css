@@ -674,7 +674,7 @@ clear: both;
 }
 
 .store-pagination li a.active {
-  background-color: #ff6600;
+  background-color: #E6344A;
 }
 #get_product, #get_productM, #get_productT, #get_productA {
   width: 100%; /* Ajusta el ancho del contenedor */
@@ -693,13 +693,17 @@ h1{
 }
 
 .search-form {
-  display: flex;
+  text-align: right;
   align-items: center;
 }
 
+form .search-form{
+  text-align: right;
+}
+
 #searchT, #searchM, #searchA {
-  width: 10%; /* Ajusta el ancho según tus necesidades */
-  height: 12%; /* Ajusta la altura según tus necesidades */
+  padding: 4px 8px;
+  border-radius: 3%;
   color: #000000;
   border: none;
   line-height: 14px;
@@ -712,7 +716,7 @@ h1{
 
 }
 #search_btnT, #search_btnA, #search_btnM {
-  padding: 5px 10px; /* Ajusta el relleno (padding) según tus necesidades */
+  padding: 6px 10px; /* Ajusta el relleno (padding) según tus necesidades */
   font-size: 14px; /* Ajusta el tamaño de fuente según tus necesidades */
   width: 6%;
   max-height: 2%;
