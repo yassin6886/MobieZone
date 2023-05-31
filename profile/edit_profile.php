@@ -1,39 +1,25 @@
 <?php
-  //session_start();
-  if(!isset($_SESSION["uid"]) && isset($_SESSION['name'])){
+if(!isset($_SESSION["uid"]) && isset($_SESSION['name'])){
     header("location:../index.php");
   }
-  include("db.php");
-?>
+include 'barra.php';
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Edit Profile</title>
-    <link rel="stylesheet" type="text/css" href="css/cat_card.css">
-    <link rel="stylesheet" type="text/css" href="css/font.scss">
-    <link rel="stylesheet" type="text/css" href="css/edit_profile.css">
-</head>
-<body>
-
-<?php include("barra.php");?>
-
-<div class="formfield" style="float: right; padding-right: 80px;">
-<button class="upload" onclick="location.replace('profile.php')">BACK</button>
-<div id="expand">
-</div></div>
-<br><br>
-<form action="<?php echo $_SERVER['REQUEST_URI'];?>" enctype = "multipart/form-data" method = "post">
-  <div id="wrapper">
-    <div id="signup">
-  <?php 
       if(isset($_POST["update"]))
       {
         $_POST['cus_name'] = addslashes($_POST['cus_name']);
+        $_POST['cus_lname'] = addslashes($_POST['cus_lname']);
         $_POST['cus_mail'] = addslashes($_POST['cus_mail']);
+        $_POST['cus_mobile'] = addslashes($_POST['cus_mobile']);
+        $_POST['cus_address1'] = addslashes($_POST['cus_address1']);
+        $_POST['cus_address2'] = addslashes($_POST['cus_address2']);
+        $_POST['cus_city'] = addslashes($_POST['cus_city']);
+        $_POST['cus_zip'] = addslashes($_POST['cus_zip']);
+        $_POST['cus_state'] = addslashes($_POST['cus_state']);
 
         $sql = "UPDATE user_info 
-        SET first_name = '{$_POST["cus_name"]}', email = '{$_POST["cus_mail"]}'
+        SET first_name = '{$_POST["cus_name"]}', email = '{$_POST["cus_mail"]}',  last_name = '{$_POST["cus_lname"]}',
+        mobile = '{$_POST["cus_mobile"]}', address1 = '{$_POST["cus_address1"]}', address2 = '{$_POST["cus_address2"]}',
+        city = '{$_POST["cus_city"]}', zip = '{$_POST["cus_zip"]}', state = '{$_POST["cus_state"]}'
         WHERE user_id = {$_SESSION['uid']}";
         $res = $con->query($sql);
         $_SESSION['name'] = $_POST["cus_name"];
@@ -41,13 +27,13 @@
         if($_POST['profile'] == 2)
         {
             $sql1 = "UPDATE user_info
-            SET user_image = 'user.png'
+            SET user_image = 'user.png', last_name = '', mobile = '', address1 = '', address2 = '', city = '', zip = '', state = ''
             WHERE user_id = {$_SESSION['uid']}";
             $res1 = $con->query($sql1);
         }
 
         if($res)
-          echo "<br><br><b><p style='color:green'>Informacion Corregida</p></b>";
+          echo "<p style='color:green'>Informacion Corregida</p></b>";
 
         $target_img = "img/";
 
@@ -90,43 +76,120 @@
         $ans = $con->query($qry);
         $val = $ans->fetch_assoc();
     }
-    ?>
-
-
-    <h2>Edit Profile</h2>
-    <hr><br>
-
-    <i><div id="usermessage"></div></i>
-
-    <div class="formfield"><br>
-    <label for="name">User Name <span style="color: red;"><sup>*</sup></span></label></div><br>
-    <input type="text" name="cus_name" id="cus_name" value="<?php echo $val['first_name']; ?>" onkeyup="userCheck(); disfunc();" required>
-
-    <div class="formfield"><br>
-    <label for="name">Email <span style="color: red;"><sup>*</sup></span></label></div><br>
-    <input type="email" name="cus_mail" value="<?php echo $val['email']; ?>" required>
-    
-    <div class="formfield"><br> 
-    <label for="image">Change Profile Pic</label>&emsp;&emsp;
-    <select name="profile" id="dropdown" style="margin-top:10px;" onclick="hidefunc()" required>
-        <option value='1' >Update Profile</option>
-        <option value='2' >Remove Profile</option>
-    </select>
-    <input type="file" id='profilepic' placeholder="image" name="cus_img" accept="image/*" style="margin-top:15px; display: inline"></div><br>
-
-    <div class="formfield" style="float: left; padding-left: 80px;">
-    <button type="submit" id="submit" class="upload" name="update">UPDATE</button>
-    <div id="expand">
-    </div></div>
-
-    <div class="formfield" style="float: left; padding-left: 100px;">
-    <button type="reset" class="upload">RESET</button>
-    <div id="expand">
-    </div></div>
-    </div>
-  </div>
-</form>
-</div>
-<script src="js/edit_profile.js"></script>
-</body>
-</html>
+?>
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<style>
+    body{
+        background-color:#272727;
+        color:#fff;
+    }
+    .container{
+        padding-top: 0;
+        margin-top:0;
+    }
+    .header{
+      min-height: 70px;
+    }
+    .sidebar{
+      height: 100%;
+    }
+    h2{
+        text-align:center;
+    }
+    /* p{
+        position: absolute;
+        bottom: 0;
+        left: 100;
+    } */
+</style>
+</head>
+<div class="container mt-5">
+    <h2>Editar Perfil</h2>
+            <div class="p-3 border border-lg shadow-lg bg-dark">
+            
+                <form class="row g-3 p-2" action="<?php echo $_SERVER['REQUEST_URI'];?>" enctype = "multipart/form-data" method = "post">
+                <i><div id="usermessage"></div></i>
+                <div class="col-12 col-md-4">
+                        <img class="img-fluid" src="img/<?php echo $val['user_image']; ?>" alt="img">
+                    </div>
+                    <div class="col-12 col-md-8">
+                        <div class="row">
+                            <div class="col-12 col-md-6">
+                                <label for="inputFirstName" class="form-label">Nombre</label>
+                                <input type="text" name="cus_name" class="form-control" id="inputFirstName" value="<?php echo $val['first_name']; ?>">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="inputLastName" class="form-label">Apellidos</label>
+                                <input type="text" name="cus_lname" class="form-control" id="inputLastName" value="<?php if($val['last_name'] != ''){ echo $val['last_name']; } ?>">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="inputEmail" class="form-label">Email</label>
+                                <input type="email" name="cus_mail" class="form-control" id="inputEmail" value="<?php echo $val['email']; ?>">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="inputPhone" name="cus_mail" class="form-label">Telefono</label>
+                                <input type="tel" name="cus_mobile" class="form-control" id="inputPhone" value="<?php if($val['mobile'] != ''){ echo $val['mobile']; } ?>">
+                            </div>
+                            <div class="col-12">
+                                <label for="inputAddress" class="form-label">Direccion 1</label>
+                                <input type="text" name="cus_address1" class="form-control" id="inputAddress" value="<?php if($val['address1'] != ''){ echo $val['address1']; } ?>">
+                            </div>
+                            <div class="col-12">
+                                <label for="inputAddress2" class="form-label">Direccion 2</label>
+                                <input type="text" name="cus_address2" class="form-control" id="inputAddress2" value="<?php if($val['address2'] != ''){ echo $val['address2']; } ?>">
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <label for="inputCity" class="form-label">Ciudad</label>
+                                <input type="text" name="cus_city" class="form-control" id="inputCity" value="<?php if($val['city'] != ''){ echo $val['city']; } ?>">
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <labe for="inputState" class="form-label">Comunidad</labe>
+                                <select name="cus_state" id="inputState" class="form-select">
+                                    <option selected><?php if($val['state'] != ''){ echo $val['state']; }else{echo "Comunidad...";} ?></option>
+                                    <option>Andalucia</option>
+                                    <option>Aragon</option>
+                                    <option>Isla Baleares</option>
+                                    <option>Canarias</option>
+                                    <option>Cantabria</option>
+                                    <option>Castilla La Mancha</option>
+                                    <option>Castilla Y Leon</option>
+                                    <option>Cataluña</option>
+                                    <option>Comunidad De Madrid</option>
+                                    <option>Comunidad Foral De NAvarra</option>
+                                    <option>Comunidad Valenciana</option>
+                                    <option>Extremadura</option>
+                                    <option>Galicia</option>
+                                    <option>Pais Vasco</option>
+                                    <option>Principado De Asturias</option>
+                                    <option>Region De Murcia</option>
+                                    <option>La Rioja</option>
+                                </select>
+                            </div>
+                            <div class="col-12 col-md-2">
+                                <label for="inputZip" class="form-label">Cod. Postal</label>
+                                <input type="text" name="cus_zip" class="form-control" id="inputZip" value="<?php if($val['zip'] != ''){ echo $val['zip']; } ?>">
+                            </div>
+                            <div class="col-12 d-flex justify-content-start">
+                                <input type="file" id='profilepic' placeholder="image" name="cus_img" accept="image/*" style="margin-top:15px; display: inline;"></div><br>
+                            </div>
+                            <div class="col-12 d-flex justify-content-end">
+                                <input type="submit" name="update" class="btn btn-lg btn-primary" value="Actualizar">
+                            </div>
+                            <div class="col-12 col-md-4 ">
+                                <labe for="inputState" class="form-label">Acciones</labe>
+                                <select name="profile" id="inputState" class="form-select">
+                                    <option value='1' >Actualizar Perfil</option>
+                                    <option value='2' >Resetear Perfil</option>
+                                </select>
+                            <div id="expand"></div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+       </div>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+    </script>
+    <script src="js/edit_profile.js"></script>

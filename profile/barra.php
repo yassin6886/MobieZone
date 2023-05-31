@@ -13,7 +13,8 @@ session_start();
   <link rel="stylesheet" type="text/css" href="css/barra.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-</head>
+      
+    </head>
 <body>
 
 <div class="header">
@@ -42,7 +43,7 @@ session_start();
 
     <!--<li id="request" onclick="location.replace('cust_request.php')"><span class="material-icons md-48 md-light">recommend</span></li>-->
 
-    <li id="transaction" onclick="location.replace('cust_transaction.php')"><span class="material-icons md-48 md-light">paid</span></li>
+    <li id="transaction" onclick="location.replace('transaction.php')"><span class="material-icons md-48 md-light">paid</span></li>
 
     <li id="card" onclick="location.replace('credit_card.php')"><span class="material-icons md-48 md-light">credit_card</span></li>
 
@@ -50,7 +51,7 @@ session_start();
 
     <li id="pwd" onclick="location.replace('cust_pwd.php')"><span class="material-icons md-48 md-light">lock</span></li>
 
-    <li id="language" onclick="location.replace('language.php')"><span class="material-icons md-48 md-light">language</span></li>
+    <li id="contactUS" onclick="location.replace('contactUs.php')"><span class="material-icons md-48 md-light">contact_support</span></li>
 
     <li onclick="location.replace('cerrar_sesion.php')"><span class="material-icons md-48 md-light">logout</span></li>
 

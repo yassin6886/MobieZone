@@ -14,12 +14,12 @@
     <link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" type="text/css" href="css/cat_card.css">
     <link rel="stylesheet" type="text/css" href="css/font.scss">
-    <title>Change password</title>
+    <title>Cambiar Contraseña</title>
 </head>
 <body>
 
 <div class="login-box" style="margin: auto">
-<h2>Change Password</h2>
+<h2>Cambiar Contraseña</h2>
 <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
     <hr><br>
     <?php
@@ -36,15 +36,15 @@
         $res1 = $con->query($sql1);
         if ($res1->num_rows == 0) 
         {
-          echo "<p style='color:tomato;'>Incorrect old password</p>";
+          echo "<p style='color:tomato;'>Contraseña antigua incorrecta </p>";
         }
         else if ($_POST["newpwd"] != $_POST["cnfmpwd"]) 
         {
-          echo "<p style='color:tomato;'>Enter confirm password properly !</p>";
+          echo "<p style='color:tomato;'>Las contraseñas no coinciden !</p>";
         }
         else if ($_POST["oldpwd"] == $_POST["newpwd"]) 
         {
-          echo "<p style='color:tomato;'>New password should not be same !</p>";
+          echo "<p style='color:tomato;'>La contraseña No se ha podido cambiar !</p>";
         }
         else 
         {
@@ -64,18 +64,18 @@
 
     <div class="user-box">
       <input type="password" name="oldpwd" required>
-      <label>Old Password</label>
+      <label>Antigua Contraseña</label>
     </div>
 
     <div class="user-box">
       <input type="password" name="newpwd" id="newpwd" onkeyup="CheckPassword(); check(); disfunc()" required>
-      <label>New Password</label>
+      <label>Nueva Contraseña</label>
       <i><div id="message" style="float: right;"></div><i>
     </div>
 
     <div class="user-box">
       <input type="password" name="cnfmpwd" id="cnfmpwd" onkeyup="check(); disfunc()" required>
-      <label>Confirm Password</label>
+      <label>Confirmar Contraseña</label>
     </div>
 
     <i><div id="pwdmessage"></div><i>

@@ -7,7 +7,7 @@ $database   = 'mobilezone';
 
 // creamos conexion
 $con = new mysqli($server, $username, $password);
-
+mysqli_set_charset($con, 'utf8');
 // Comprobamos la conexion
 if ($con->connect_error) {
    die("Connection failed: " . $con->connect_error);
