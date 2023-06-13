@@ -15,7 +15,7 @@
   body {
     margin: 0 auto;
     background: #1d1f20;
-    font-family: sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-transform: uppercase;
     color: #F4F4F8;
   }
@@ -62,7 +62,7 @@
     background: none;
     border: none;
     /*border: solid 1px #F4F4F8;*/
-    font-family: sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #F4F4F8;
     font-size: 20px;
     letter-spacing: 1.5px;
@@ -84,7 +84,7 @@
     border: none;
     border-bottom: solid 1px #ff9b9d;
     margin-bottom: 10px;
-    font-family: sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #F4F4F8;
     font-size: 14px;
     letter-spacing: 1.5px;

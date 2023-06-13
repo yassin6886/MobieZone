@@ -1,6 +1,6 @@
 <?php
  include("db.php");
- include("barra.php");
+ include("header.php");
   //session_start();
   if(!isset($_SESSION["uid"])){
     header("location:../index.php");
@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<div class="login-box" style="margin: auto">
+<div class="login-box">
 <h2>Cambiar Contraseña</h2>
 <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
     <hr><br>
@@ -94,3 +94,5 @@
 <style>
 
 </style>
+<?php
+ include("footer.php");

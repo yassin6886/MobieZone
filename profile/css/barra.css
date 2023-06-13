@@ -5,7 +5,7 @@
 }
     
     *{
-      font-family: "Nunito", sans-serif;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
     .header{
       margin-left: 0%;
@@ -236,7 +236,7 @@ nav ul li div { position: relative; }
 
 
 .shimmer {
-font-family: lato;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 color: rgba(105,105,105,0.6);
 background: -webkit-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));
 background: -moz-gradient(linear, left top, right top, from(#222), to(#222), color-stop(0.5, #fff));

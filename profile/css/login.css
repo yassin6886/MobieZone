@@ -1,22 +1,14 @@
-body {
-  margin:0;
-  padding:0;
-  font-family: sans-serif;
-  background: #272727;
-  background-repeat: no-repeat;
-}
-
 .login-box {
-  position: absolute;
-  top: 50%;
-  left: 50%;
+  position: relative;
   width: 400px;
   padding: 40px;
   transform: translate(-50%, -50%);
-  background: rgba(0,0,0,.75);
+  background: #272727;
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  box-shadow: 0px 0px 24px #E6344A;
   border-radius: 20px;
+  margin: 25% auto -10% 50%;
+
 }
 
 .login-box h2 {

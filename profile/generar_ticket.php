@@ -18,7 +18,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         $productos[] = $row;
     }
-    
+    foreach ($productos as $prod){
     // Crear un nuevo objeto PDF
     $pdf = new FPDF('P','mm','A4');
     $pdf->AddPage();
@@ -40,23 +40,23 @@ if ($result && mysqli_num_rows($result) > 0) {
     $pdf->SetFont('Arial','',10);
     $pdf->Cell(130 ,5,'C/ Alberto Aguilera, 23',0,0);
     $pdf->Cell(25 ,5,'ID CLIENTE:',0,0);
-    $pdf->Cell(34 ,5,$cliente,0,1);
+    $pdf->Cell(34 ,5,'CL00'.$prod["user_id"],0,1);
     
     $pdf->Cell(130 ,5,'28015, MADRID',0,0);
     $pdf->Cell(25 ,5,'FECHA:',0,0);
-    $pdf->Cell(34 ,5,$fecha,0,1);
+    $pdf->Cell(34 ,5,$prod["order_date"],0,1);
     
     $pdf->Cell(130 ,5,'',0,0);
     $pdf->Cell(25 ,5,utf8_decode('Nº PEDIDO:'),0,0);
-    $pdf->Cell(34 ,5,$pedido,0,1);
+    $pdf->Cell(34 ,5,$prod["order_code"],0,1);
     
     $pdf->SetFont('Arial','B',15);
-    $pdf->Cell(130 ,5,'Factura A',0,0);
+    $pdf->Cell(130 ,5,'Factura A '.$prod["f_name"],0,0);
     $pdf->Cell(59 ,5,'',0,0);
     $pdf->SetFont('Arial','B',10);
     $pdf->Cell(189 ,10,'',0,1);
     
-    $pdf->Cell(50 ,10,$row["f_name"],0,1);
+    $pdf->Cell(50 ,10,'',0,1);
     
     $pdf->SetFont('Arial','B',10);
     /*Heading Of the table*/
@@ -88,7 +88,7 @@ if ($result && mysqli_num_rows($result) > 0) {
     $pdf->Cell(118 ,6,'',0,0);
     $pdf->Cell(25 ,6,'SUBTOTAL',0,0);
     $pdf->Cell(45 ,6,$total,1,1,'R');
-    
+}
     // Generar el archivo PDF
     ob_end_clean(); // Limpiar el búfer de salida
     $pdf->Output('factura.pdf', 'D'); // Descargar el archivo PDF con el nombre "ticket.pdf"

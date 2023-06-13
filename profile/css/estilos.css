@@ -3,12 +3,6 @@
 	margin: 0;
 	box-sizing: border-box;
 }
-
-body {
-	background: #272727;
-	font-family: 'Lato', sans-serif;
-}
-
 .contenedor {
 	width: 90%;
 	max-width: 1000px;

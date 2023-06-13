@@ -19,7 +19,7 @@ session_start();
 
 <div class="header">
   <div class="shimmer">
-  <b style="font-size: 32px; line-height: 30px;"><span class="material-symbols-outlined">Person</span>&ensp; Profile</b>
+  <b style="font-size: 32px; line-height: 30px;"><span style="font-size:32px;" class="material-symbols-outlined">Person</span>Perfil</b>
   </div>
 </div>
 

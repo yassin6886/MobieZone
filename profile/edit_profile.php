@@ -2,7 +2,7 @@
 if(!isset($_SESSION["uid"]) && isset($_SESSION['name'])){
     header("location:../index.php");
   }
-include 'barra.php';
+include 'header.php';
 
       if(isset($_POST["update"]))
       {
@@ -33,7 +33,7 @@ include 'barra.php';
         }
 
         if($res)
-          echo "<p style='color:green'>Informacion Corregida</p></b>";
+          //echo "<p style='color:green'>Informacion Corregida</p></b>";
 
         $target_img = "img/";
 
@@ -77,35 +77,31 @@ include 'barra.php';
         $val = $ans->fetch_assoc();
     }
 ?>
-<head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-<style>
+    <style>
     body{
-        background-color:#272727;
+        background-color:#000000;
         color:#fff;
-    }
-    .container{
-        padding-top: 0;
-        margin-top:0;
-    }
-    .header{
-      min-height: 70px;
-    }
-    .sidebar{
-      height: 100%;
     }
     h2{
         text-align:center;
+        color:#fff;
     }
     /* p{
         position: absolute;
         bottom: 0;
         left: 100;
     } */
+    .nav-items {
+    margin-left: 35%;
+}
+a:hover{
+    color:white;
+}
 </style>
-</head>
-<div class="container mt-5">
+
+<div class="container mt-5" style="margin-bottom:5%;">
     <h2>Editar Perfil</h2>
             <div class="p-3 border border-lg shadow-lg bg-dark">
             
@@ -118,35 +114,35 @@ include 'barra.php';
                         <div class="row">
                             <div class="col-12 col-md-6">
                                 <label for="inputFirstName" class="form-label">Nombre</label>
-                                <input type="text" name="cus_name" class="form-control" id="inputFirstName" value="<?php echo $val['first_name']; ?>">
+                                <input type="text" name="cus_name" class="form-control" id="inputFirstName" value="<?php echo $val['first_name']; ?>"  style="font-size:16px;">
                             </div>
                             <div class="col-12 col-md-6">
                                 <label for="inputLastName" class="form-label">Apellidos</label>
-                                <input type="text" name="cus_lname" class="form-control" id="inputLastName" value="<?php if($val['last_name'] != ''){ echo $val['last_name']; } ?>">
+                                <input type="text" name="cus_lname" class="form-control" id="inputLastName" value="<?php if($val['last_name'] != ''){ echo $val['last_name']; } ?>"  style="font-size:16px;">
                             </div>
                             <div class="col-12 col-md-6">
                                 <label for="inputEmail" class="form-label">Email</label>
-                                <input type="email" name="cus_mail" class="form-control" id="inputEmail" value="<?php echo $val['email']; ?>">
+                                <input type="email" name="cus_mail" class="form-control" id="inputEmail" value="<?php echo $val['email']; ?>"  style="font-size:16px;">
                             </div>
                             <div class="col-12 col-md-6">
                                 <label for="inputPhone" name="cus_mail" class="form-label">Telefono</label>
-                                <input type="tel" name="cus_mobile" class="form-control" id="inputPhone" value="<?php if($val['mobile'] != ''){ echo $val['mobile']; } ?>">
+                                <input type="tel" name="cus_mobile" class="form-control" id="inputPhone" value="<?php if($val['mobile'] != ''){ echo $val['mobile']; } ?>"  style="font-size:16px;">
                             </div>
                             <div class="col-12">
                                 <label for="inputAddress" class="form-label">Direccion 1</label>
-                                <input type="text" name="cus_address1" class="form-control" id="inputAddress" value="<?php if($val['address1'] != ''){ echo $val['address1']; } ?>">
+                                <input type="text" name="cus_address1" class="form-control" id="inputAddress" value="<?php if($val['address1'] != ''){ echo $val['address1']; } ?>"  style="font-size:16px;">
                             </div>
                             <div class="col-12">
                                 <label for="inputAddress2" class="form-label">Direccion 2</label>
-                                <input type="text" name="cus_address2" class="form-control" id="inputAddress2" value="<?php if($val['address2'] != ''){ echo $val['address2']; } ?>">
+                                <input type="text" name="cus_address2" class="form-control" id="inputAddress2" value="<?php if($val['address2'] != ''){ echo $val['address2']; } ?>" style="font-size:16px;">
                             </div>
                             <div class="col-12 col-md-6">
                                 <label for="inputCity" class="form-label">Ciudad</label>
-                                <input type="text" name="cus_city" class="form-control" id="inputCity" value="<?php if($val['city'] != ''){ echo $val['city']; } ?>">
+                                <input type="text" name="cus_city" class="form-control" id="inputCity" value="<?php if($val['city'] != ''){ echo $val['city']; } ?>"  style="font-size:16px;">
                             </div>
                             <div class="col-12 col-md-4">
                                 <labe for="inputState" class="form-label">Comunidad</labe>
-                                <select name="cus_state" id="inputState" class="form-select">
+                                <select name="cus_state" id="inputState" class="form-select" style="font-size:16px;">
                                     <option selected><?php if($val['state'] != ''){ echo $val['state']; }else{echo "Comunidad...";} ?></option>
                                     <option>Andalucia</option>
                                     <option>Aragon</option>
@@ -169,27 +165,37 @@ include 'barra.php';
                             </div>
                             <div class="col-12 col-md-2">
                                 <label for="inputZip" class="form-label">Cod. Postal</label>
-                                <input type="text" name="cus_zip" class="form-control" id="inputZip" value="<?php if($val['zip'] != ''){ echo $val['zip']; } ?>">
+                                <input type="text" name="cus_zip" class="form-control" id="inputZip" value="<?php if($val['zip'] != ''){ echo $val['zip']; } ?>"  style="font-size:16px;">
                             </div>
                             <div class="col-12 d-flex justify-content-start">
                                 <input type="file" id='profilepic' placeholder="image" name="cus_img" accept="image/*" style="margin-top:15px; display: inline;"></div><br>
                             </div>
-                            <div class="col-12 d-flex justify-content-end">
-                                <input type="submit" name="update" class="btn btn-lg btn-primary" value="Actualizar">
-                            </div>
+                            
                             <div class="col-12 col-md-4 ">
                                 <labe for="inputState" class="form-label">Acciones</labe>
-                                <select name="profile" id="inputState" class="form-select">
+                                <select name="profile" id="inputState" class="form-select" style="font-size:16px; margin:5px;">
                                     <option value='1' >Actualizar Perfil</option>
                                     <option value='2' >Resetear Perfil</option>
                                 </select>
                             <div id="expand"></div>
                         </div>
+                        <div class="col-12 d-flex justify-content-end">
+                                <input type="submit" name="update" class="btn btn-lg btn-primary" value="Actualizar">
+                            </div>
                     </div>
                 </form>
             </div>
        </div>
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous">
+       
     </script>
-    <script src="js/edit_profile.js"></script>
+    
+<style>
+    a:hover{
+    color:white;
+}
+.nav-link:hover {
+    color: #fff;
+}
+</style>
+    <?php
+    include 'footer.php';

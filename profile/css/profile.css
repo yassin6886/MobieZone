@@ -1,12 +1,11 @@
 body{
     /*background-image: url("images/profile.gif");*/
-    background-color:#272727;
+    background-color:#000000;
     background-size: cover;
     margin: 0;
     padding: 0;
     justify-content:center;
     align-items: center;
-    font-family: sans-serif;
     /*overflow-y:hidden;*/
   }
 
@@ -19,7 +18,8 @@ body{
   }
 
   .box{
-    margin: 11%;
+    margin-bottom: 8%;
+    width: 100%;
   }
   .card{
     position: relative;
@@ -106,9 +106,7 @@ body{
 
    @import url('https://fonts.googleapis.com/css?family=Nunito:400,600,700');
 
-body{
-  font-family: 'Nunito', sans-serif;
-}
+
 
 .a{color: #E7484F}
 .b{color: #E6344A}
@@ -116,11 +114,6 @@ body{
 .d{color: #e33347}
 .e{color: #ea3046}
 .f{color:  #ea3046}
-
-
-.container{
-  margin-top: 50px;
-}
 
 .text-center {
   text-align: center;

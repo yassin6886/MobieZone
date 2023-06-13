@@ -12,7 +12,7 @@
 <body>
 <?php
 include 'db.php';
-include("barra.php");
+include("header.php");
 
 if(isset($_SESSION['uid']) && $_SESSION['name']){
 	$id = $_SESSION['uid'];
@@ -39,7 +39,7 @@ if(isset($_SESSION['uid']) && $_SESSION['name']){
 					<div class="flexbox">
 						<div class="grupo" id="nombre">
 							<p class="label">Nombre Tarjeta</p>
-							<p class="nombre">Jhon Doe</p>
+							<p class="nombre">TU NOMBRE</p>
 						</div>
 
 						<div class="grupo" id="expiracion">
@@ -237,3 +237,6 @@ if(isset($_SESSION['uid']) && $_SESSION['name']){
 			height:70px;
 		}
 	</style>
+
+	<?php
+	include("footer.php");

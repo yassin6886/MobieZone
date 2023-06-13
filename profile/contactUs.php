@@ -1,5 +1,5 @@
 <?php
-include 'barra.php';
+include 'header.php';
 ?>
 <!DOCTYPE html>
 <head>
@@ -8,11 +8,11 @@ include 'barra.php';
 </head>
 <body>
 <div class="background">
-  <div class="container">
+  <div class="containerContact">
     <div class="screen">
       <div class="screen-header">
         <div class="screen-header-left">
-          <div class="screen-header-button close"></div>
+        <div class="screen-header-button close2"></div>
           <div class="screen-header-button maximize"></div>
           <div class="screen-header-button minimize"></div>
         </div>
@@ -25,8 +25,7 @@ include 'barra.php';
       <div class="screen-body">
         <div class="screen-body-item left">
           <div class="app-title">
-            <span>CONTACTA</span>
-            <span>NOS</span>
+            <span>CONTACTANOS</span>
           </div>
           <div id="response-msg"></div>
           <div class="app-contact">INFO CONTACTO: +34 910364872</div>
@@ -58,3 +57,12 @@ include 'barra.php';
 </body>
 <script src="js/ajax.js"></script>
 </html>
+<style>
+  body{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+   
+</style>
+<?php
+include 'footer.php';
+
