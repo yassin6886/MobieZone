@@ -1,8 +1,7 @@
 <?php
 include 'header.php';
 ?>
-<div class="main main-raised"> 
-        
+<div class="main main-raised">    
 		<div class="section">
 			<!-- container -->
 			<div class="container">

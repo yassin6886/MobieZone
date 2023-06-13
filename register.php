@@ -4,14 +4,13 @@ include "connect.php";
 if (isset($_POST["rusuario"])) {
 
 	$f_name = $_POST["rusuario"];
-	$l_name = $_POST["rapellido"];
 	$email = $_POST['remail'];
 	$password = sha1($_POST['rcontra']);
 	$repassword = sha1($_POST['repetircontra']);
 	$name = "/^[a-zA-Z ]+$/";
 	$emailValidation = "/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9]+(\.[a-z]{2,4})$/";
 
-if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empty($repassword)){
+if(empty($f_name) || empty($email) || empty($password) || empty($repassword)){
 		
 		echo "
 			<div class='alert alert-warning'>
@@ -25,15 +24,6 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
 				<b>Este $f_name no es valido..!</b>
-			</div>
-		";
-		exit();
-	}
-	if(!preg_match($name,$l_name)){
-		echo "
-			<div class='alert alert-warning'>
-				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>El $l_name No es valido..!</b>
 			</div>
 		";
 		exit();
@@ -88,9 +78,9 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 	} else {
 		
 		$sql = "INSERT INTO `user_info` 
-		(`user_id`, `first_name`, `last_name`, `email`, 
+		(`user_id`, `first_name`, `email`, 
 		`password`) 
-		VALUES (NULL, '$f_name', '$l_name', '$email', 
+		VALUES (NULL, '$f_name', '$email', 
 		'$password')";
 		$run_query = mysqli_query($con,$sql);
 		$_SESSION["uid"] = mysqli_insert_id($con);

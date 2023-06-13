@@ -7,6 +7,43 @@ include "header.php";
                          
 ?>
 
+<!-- HOT DEAL SECTION -->
+<div id="hot-deal2" class="section1 mainn mainn-raised">
+		<!-- container -->
+		<div class="container">
+			<!-- row -->
+			<div class="row">
+				<div class="col-md-12">
+					<div class="hot-deal1">
+						<ul class="hot-deal-countdown1">
+							<li>
+								<div>
+									<a href="index.php"> <h3><img src="img/lineacart_.png"></h3></a>
+									<span>COMPRA</span>
+								</div>
+							</li>
+							<li>
+								<div>
+								<a href="carrito.php"> <h3><img src="img/lineacart2_.png"></h3></a>
+									<span>EDITA TU CARRITO</span>
+								</div>
+							</li>
+							<li style="width: 115px; height: 115px; border: white 3px solid;">
+								<div>
+									<h3><img src="img/lineacart3_.png"></h3>
+									<span>PAGA</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- /row -->
+		</div>
+		<!-- /container -->
+	</div>
+	<!-- /HOT DEAL SECTION -->
+
 <head>
 	<link rel="stylesheet" href="css/checkout.css">
 </head>			
@@ -41,68 +78,58 @@ include "header.php";
 			<div class="col-75">
 				<div class="container-checkout">
 				<form id="checkout_form" action="checkout_process.php" method="POST" class="was-validated">
-
-					<div class="row-checkout">
-					
-					<div class="col-50">
-						<h3><i class="fa-regular fa-map" ></i> Direccion de Envio</h3>
-						<label for="fname"><i class="fa fa-user" ></i> Nombre Completo</label>
-						<input type="text" id="fname" class="form-control" name="firstname" pattern="^[a-zA-Z ]+$"  value="<?php if($row["first_name"] != ''){echo $row["first_name"];}else if($row["first_name"] != '' && $row['last_name'] != ''){echo $row["first_name"] .' '. $row["last_name"];} ?>">
-						<label for="email"><i class="fa fa-envelope"></i> Email</label>
-						<input type="text" id="email" name="email" class="form-control" pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9]+(\.[a-z]{2,4})$" value="<?php echo $row["email"]; ?>" required>
-						<label for="adr"><i class="fa fa-address-card"></i> Direccion</label>
-						<input type="text" id="adr" name="address" class="form-control" value="<?php if($row["address1"]){echo $row["address1"];} ?>" required>
-						<label for="city"><i class="fa-solid fa-city"></i> Ciudad</label>
-						<input type="text" id="city" name="city" class="form-control" value="<?php if($row["city"]){echo $row["city"];} ?>" pattern="^[a-zA-Z ]+$" required>
-
-						<div class="row">
-						<div class="col-50">
-							<label for="state">Comunidad</label>
-							<input type="text" id="state" name="state" class="form-control" pattern="^[a-zA-Z ]+$" value="<?php if($row["state"]){echo $row["state"];} ?>" required>
-						</div>
-						<div class="col-50">
-							<label for="zip">Codigo Postal</label>
-							<input type="text" id="zip" name="zip" class="form-control" pattern="^[0-9]{5}(?:-[0-9]{4})?$" value="<?php if($row["zip"]){echo $row["zip"];} ?>" required>
-						</div>
-						</div>
-					</div>
-					
-					
-					<div class="col-50">
-						<h3><i class="fa-solid fa-wallet" style="margin-right:5px;"></i>Pago</h3>
-						<label for="fname"><i class="fa-regular fa-credit-card"></i> Tarjetas Aceptadas</label>
-						<div class="icon-container">
-						<i class="fa-brands fa-cc-visa"></i>
-						<i class="fa-brands fa-cc-mastercard"></i>
-						<i class="fa-brands fa-cc-paypal"></i>
-						<i class="fa-brands fa-cc-discover"></i>
-						</div>
-						
-						
-						<label for="cname">Nombre de la Tarjeta</label>
-						<input type="text" value="<?php if($count == 1){echo $row2["cardname"];} else{}?>" id="cname" name="cardname" class="form-control" pattern="^[a-zA-Z ]+$" required>
-						
-						<div class="form-group" id="card-number-field">
-                        <label for="cardNumber">Numero de Tarjeta</label>
-                        <input type="text" value="<?php if($count == 1){echo $row2["cardnumber"];} else{}?>"  class="form-control" id="cardNumber" name="cardNumber" required>
-                    </div>
-						<label for="expdate">Fecha de Expedicion</label>
-						<input type="text" value="<?php if($count == 1){echo $month.'/'.$year;} else{}?>"  id="expdate" name="expdate" class="form-control" pattern="^((0[1-9])|(1[0-2]))\/(\d{2})$" placeholder="12/22"required>
-						
-
-						<div class="row">
-						
-						<div class="col-50">
-							<div class="form-group CVV">
-								<label for="cvv">CVV</label>
-								<input type="text" value="<?php if($count == 1){echo $row2["cvv"];} else{}?>"  class="form-control" name="cvv" id="cvv" required>
-						</div>
-						</div>
-					</div>
-					</div>
-					</div>
-					<label><input type="CHECKBOX" name="q" class="roomselect" value="conform" required> Direccion de envio igual que facturacion
-					</label>
+  <div class="row-checkout">
+    <div class="col-50">
+      <h3><i class="fa-regular fa-map"></i> Direccion de Envio</h3>
+      <label for="fname"><i class="fa fa-user"></i> Nombre Completo</label>
+      <input type="text" id="fname" class="form-control" name="firstname" pattern="^[a-zA-Z ]+$" value="<?php if($row['first_name'] != ''){echo $row['first_name'];}else if($row['first_name'] != '' && $row['last_name'] != ''){echo $row['first_name'] .' '. $row['last_name'];} ?>" required>
+      <label for="email"><i class="fa fa-envelope"></i> Email</label>
+      <input type="text" id="email" name="email" class="form-control" pattern="^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9]+(\.[a-z]{2,4})$" value="<?php echo $row['email']; ?>" required>
+      <label for="adr"><i class="fa fa-address-card"></i> Direccion</label>
+      <input type="text" id="adr" name="address" class="form-control" value="<?php if($row['address1']){echo $row['address1'];} ?>" required>
+      <label for="city"><i class="fa-solid fa-city"></i> Ciudad</label>
+      <input type="text" id="city" name="city" class="form-control" value="<?php if($row['city']){echo $row['city'];} ?>" pattern="^[a-zA-Z ]+$" required>
+      <div class="row">
+        <div class="col-50">
+          <label for="state">Comunidad</label>
+          <input type="text" id="state" name="state" class="form-control" pattern="^[a-zA-Z ]+$" value="<?php if($row['state']){echo $row['state'];} ?>" required>
+        </div>
+        <div class="col-50">
+          <label for="zip">Codigo Postal</label>
+          <input type="text" id="zip" name="zip" class="form-control" pattern="^[0-9]{5}(?:-[0-9]{4})?$" value="<?php if($row['zip']){echo $row['zip'];} ?>" required maxlength="5">
+        </div>
+      </div>
+    </div>
+    <div class="col-50">
+      <h3><i class="fa-solid fa-wallet" style="margin-right:5px;"></i>Pago</h3>
+      <label for="fname"><i class="fa-regular fa-credit-card"></i> Tarjetas Aceptadas</label>
+      <div class="icon-container">
+        <i class="fa-brands fa-cc-visa"></i>
+        <i class="fa-brands fa-cc-mastercard"></i>
+        <i class="fa-brands fa-cc-paypal"></i>
+        <i class="fa-brands fa-cc-discover"></i>
+      </div>
+      <label for="cname">Nombre de la Tarjeta</label>
+      <input type="text" value="<?php if($count == 1){echo $row2['cardname'];} else{}?>" id="cname" name="cardname" class="form-control" pattern="^[a-zA-Z ]+$" required>
+      <div class="form-group" id="card-number-field">
+        <label for="cardNumber">Numero de Tarjeta</label>
+        <input type="text" value="<?php if($count == 1){echo $row2['cardnumber'];} else{}?>" class="form-control" id="cardNumber" name="cardNumber" required maxlength="16">
+      </div>
+      <label for="expdate">Fecha de Expedicion</label>
+      <input type="text" value="<?php if($count == 1){echo $month.'/'.$year;} else{}?>" id="expdate" name="expdate" class="form-control" pattern="^((0[1-9])|(1[0-2]))\/(\d{2})$" placeholder="12/22" required maxlength="5">
+      <div class="row">
+        <div class="col-50">
+          <div class="form-group CVV">
+            <label for="cvv">CVV</label>
+            <input type="text" value="<?php if($count == 1){echo $row2['cvv'];} else{}?>" class="form-control" name="cvv" id="cvv" required maxlength="3">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <label>
+    <input type="checkbox" name="q" class="roomselect" value="conform" required> Direccion de envio igual que facturacion
+  </label>
 					<?php
 					$i=1;
 					$total=0;
@@ -217,7 +244,6 @@ include "header.php";
 			</div>
 			<!-- /container -->
 		</div>
-		
 <?php
 include "footer.php";
 ?>

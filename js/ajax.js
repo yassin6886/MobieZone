@@ -14,6 +14,7 @@ $(document).ready(function(){
 	productM();
 	productT();
 	productA();
+	Getreview()
 	/****Busca las categoarias de la pagina**/
 	function cat(){
 		$.ajax({
@@ -178,6 +179,7 @@ $(document).ready(function(){
    
 	/****carga los productos relacionados con la categoria******/
 	$("body").delegate(".category","click",function(event){
+		location.reload();
 		$("#get_product").html("<h3>Loading...</h3>");
 		event.preventDefault();
 		var cid = $(this).attr('cid');
@@ -354,7 +356,7 @@ $(document).ready(function(){
 			method	:	"POST",
 			data	:	{search:1,keyword:keyword},
 			success	:	function(data){ 
-				//window.location.href = 'store.php';
+				window.location.href = 'store.php';
 					$("#get_product").html(data);
 				if($("body").width() < 480){
 					$("body").scrollTop(683);
@@ -726,6 +728,40 @@ $(document).ready(function(){
 		})
 	})
 
+
+	pageR();
+	function pageR(){
+		var url = new URL(window.location.href);
+
+	// Obtener el valor de la variable "nombre" de la URL
+	var pid = url.searchParams.get("p");
+		$.ajax({
+			url	:	"action.php",
+			method	:	"POST",
+			data	:	{pageR:1,pid},
+			success	:	function(data){
+				$("#pagenoR").html(data);
+			}
+		})
+	}
+	$("body").delegate("#pageR","click",function(event){
+		event.preventDefault();
+		var pn = $(this).attr("page");
+		var url = new URL(window.location.href);
+		// Obtener el valor de la variable "nombre" de la URL
+		var pid = url.searchParams.get("p");
+		$.ajax({
+			url	:	"action.php",
+			method	:	"POST",
+			data	:	{review:1,setPageR:1,pageNumber:pn,pid},
+			success	:	function(data){
+				$("#get_review").html(data);
+			}
+		})
+	})
+
+
+
 	/* $(document).on('click', '.cta-btn', function(e) {
 		e.preventDefault();
 		
@@ -746,7 +782,34 @@ $(document).ready(function(){
 		});
 	  }); */
 	  
-	  
+	  function Getreview(){
+		var url = new URL(window.location.href);
+
+	// Obtener el valor de la variable "nombre" de la URL
+	var pid = url.searchParams.get("p");
+		$.ajax({
+			url	:	"action.php",
+			method:	"POST",
+			data	:	{review:1,pid},
+			success	:	function(data){
+				$("#get_review").html(data);
+			}
+		})
+	}
+
+	  $("#review").on("click",function(event){
+		event.preventDefault();
+		$(".overlay").show();
+		$.ajax({
+			url	:	"review.php",
+			method:	"POST",
+			data	:$("#rev").serialize(),
+			success	:function(data){
+				$('#product_msg').html(data);
+				$('.overlay').hide();
+			}
+		})
+	})  
 })
 
 $(document).ready(function() {
@@ -759,4 +822,14 @@ $(document).ready(function() {
 	  $(this).removeClass('centered');
 	  $(this).attr('placeholder', 'Buscar...');
 	});
-  });
+});
+
+function actualizar(id, id_campo){
+	var cantidad = parseInt($("#"+id_campo).val());
+	$.ajax({
+		url: "action.php",
+		method: "POST",
+		data: {id:id,cantidad:cantidad}
+		
+	})
+}

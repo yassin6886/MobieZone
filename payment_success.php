@@ -10,14 +10,14 @@
       }
         h1 {
           color: #88B04B;
-          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-weight: 900;
           font-size: 40px;
           margin-bottom: 10px;
         }
         p {
           color: #fff;
-          font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
+          font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
           font-size:20px;
           margin: 0;
         }

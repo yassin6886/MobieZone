@@ -12,19 +12,19 @@ include "header.php";
 						<ul class="hot-deal-countdown1">
 							<li>
 								<div>
-									<h3><img src="img/lineacart_.png"></h3>
+								<a href="index.php"> <h3><img src="img/lineacart_.png"></h3></a>
 									<span>COMPRA</span>
 								</div>
 							</li>
 							<li style="width: 115px; height: 115px; border: white 3px solid;">
 								<div>
 									<h3><img src="img/lineacart2_.png"></h3>
-									<span>PAGA</span>
+									<span>EDITA TU CARRITO</span>
 								</div>
 							</li>
 							<li>
 								<div>
-									<h3><img src="img/lineacart3_.png"></h3>
+									<a href="checkout.php"> <h3><img src="img/lineacart3_.png"></h3></a>
 									<span>RECOGE TU TICKET</span>
 								</div>
 							</li>
@@ -44,6 +44,40 @@ include "header.php";
     </div>
 </div>
 </section>	
+<script>
+    function total(x) {
+        var precio = document.getElementById("pri" + x).innerText.replace(" €", "")
+        document.getElementById("sub" + x).innerHTML = $("#qua" + x).val() * precio + "<small> €</small>"
+    }
+    function validar(x){
+        
+        if($("#qua"+x).val() < 1){
+            $("#qua"+x).val(1) 
+            total(x)
+        }else{
+            total(x)
+        }
+    }
+
+    function contar(){
+        var count = 0
+        $(".qty").each(function(){
+            count += parseInt($(this).val())
+            
+        })
+        $("#contarp").text("( "+count+" )")
+    }
+
+	function sum(x){
+        var sumar = 0
+        if($("#qua"+x).val() >= 1){
+    	    $(".total-producto").each(function(){
+            	sumar += parseInt($(this).text().replace("€", ""))
+        	}) 
+        	$("#netT").text("Total: " + sumar + " €")
+        }
+    }
+</script>
 <?php
 
 include "footer.php";

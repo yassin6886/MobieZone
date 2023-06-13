@@ -1,6 +1,16 @@
 <?php
 session_start();
 include "connect.php";
+
+/* use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+
+require 'lib/PHPMailer/src/Exception.php';
+require 'lib/PHPMailer/src/PHPMailer.php';
+require 'lib/PHPMailer/src/SMTP.php'; */
+
 if (isset($_SESSION["uid"])) {
 
 	$f_name = $_POST["firstname"];
@@ -40,6 +50,35 @@ $sql = "INSERT INTO `orders_info`
 	VALUES ('$order_id', '$IDcompra', '$user_id', '$f_name', '$email', 
     '$address', '$city', '$state', '$zip', '$cardname', '$cardnumberstr', '$expdate', '$total_count', '$prod_total', '$cvv', '$date')";
 
+
+/* // Instanciar el objeto PHPMailer
+$mail = new PHPMailer(true);
+$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+
+try {
+    // Configuración del servidor SMTP
+    $mail->isSMTP();
+    $mail->Host = 'smtp.gmail.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = "shopmobilezone3@gmail.com";
+    $mail->Password = "mobilezonetfg3";
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
+
+    // Configuración del correo electrónico
+    $mail->setFrom('shopmobilezone3@gmail.com', 'Mobile');
+    $mail->addAddress($email, $f_name);
+    $mail->Subject = 'Compra Realizada';
+    $mail->Body = "Estimado(a) $f_name,\n\nGracias por tu compra.\n\nDetalles de la compra:\n\nID de compra: $IDcompra\nTotal: $prod_total\n\n¡Gracias por su compra!";
+
+    // Enviar el correo electrónico
+    $mail->send();
+
+    echo 'Correo enviado correctamente';
+} catch (Exception $e) {
+    echo 'Error al enviar el correo: ' . $mail->ErrorInfo;
+}
+exit; */
 
 
     if(mysqli_query($con,$sql)){
