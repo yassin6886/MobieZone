@@ -148,7 +148,7 @@ include 'footer.php';
         border:#2364d2;
       }
       .nav-items {
-    margin-left: 35%;
+    margin-left: 40%;
 }
 a:hover{
   color:white;
