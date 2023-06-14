@@ -77,10 +77,10 @@ include "topheader.php";
                       </div>
                     </div>
                     
-                     <div class="col-md-12">
+                     <div style="margin-top:10px; margin-bottom:30px;" class="col-md-12">
                       <div class="form-group">
                         <label>Descripcion</label>
-                        <textarea rows="4" cols="80" id="details" required name="details" class="form-control"></textarea>
+                        <textarea style="max-height:30px;" rows="4" cols="80" id="details" required name="details" class="form-control"></textarea>
                       </div>
                     </div>
                   

@@ -100,10 +100,10 @@ include "topheader.php";
                         <input type="file" name="picture2" class="btn btn-primary" id="picture">
                       </div>
                     </div>
-                     <div class="col-md-12">
+                     <div style="margin-top:10px; margin-bottom:40px;" class="col-md-12">
                       <div class="form-group">
                         <label>Descripcion</label>
-                        <textarea rows="4" cols="80" id="details" required name="details" class="form-control"><?php echo $product_desc ?></textarea>
+                        <textarea style="max-height:30px;" rows="4" cols="80" id="details" required name="details" class="form-control"><?php echo $product_desc ?></textarea>
                       </div>
                     </div>
                   
