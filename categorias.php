@@ -15,7 +15,7 @@ echo '
                         <img src="img/moviles.jpg">
                     </div>
                     <div class="shop-body">
-                        <h3>Colección de<br>moviles</h3>
+                        <h3>COLECCION DE<br>MOVILES</h3>
                         <a href="mobile.php" class="cta-btn" data-categoria="movil">Comprar ahora! <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ echo '
                         <img src="./img/accesorios.jpg" alt="">
                     </div>
                     <div class="shop-body">
-                        <h3>Colección de<br>accesorios</h3>
+                        <h3>COLECCION DE<br>ACCESORIOS</h3>
                         <a href="accesories.php"  class="cta-btn" data-categoria="accesorios">Comprar ahora! <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
@@ -47,7 +47,7 @@ echo '
                         <img src="./img/tablets.jpg" alt="">
                     </div>
                     <div class="shop-body">
-                        <h3>Colección de<br>tablets</h3>
+                        <h3>COLECCION DE<br>TABLETS</h3>
                         <a href="tablet.php" class="cta-btn" data-categoria="tablet">Comprar ahora! <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>

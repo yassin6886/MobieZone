@@ -51,12 +51,7 @@ include 'header.php';
 								";
 							}
 							unset($_SESSION["search"]);
-						} else {
-						?>
-							<!-- product -->
-							<div id="prod_marcas">
-								<?PHP
-								if (isset($_SESSION['marca_sel'])) {
+						}else if(isset($_SESSION['marca_sel'])) {
 									$id_marca = $_SESSION['marca_sel'];
 									$sql = "SELECT * FROM products WHERE product_brand = $id_marca ";
 									$query = mysqli_query($con, $sql);
@@ -88,15 +83,13 @@ include 'header.php';
 										";
 									}
 									unset($_SESSION['marca_sel']);
-								}
+									
+								}else{
 								?>
-							</div>
-						<?php
-						}
-						?>
-						<div id="get_productS">
+						<div id="get_product">
 							<!--Here we get product jquery Ajax Request-->
 						</div>
+						<?php } ?>
 						<!-- /product -->
 					</div>
 					<!-- /store products -->
