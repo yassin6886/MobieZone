@@ -756,7 +756,7 @@ clear: both;
 .store-pagination li a.active {
   background-color: #E6344A;
 }
-#prod_marcas, #get_productM, #get_productT, #get_productA {
+#prod_marcas,#get_product, #get_productM, #get_productT, #get_productA {
   width: 100%; /* Ajusta el ancho del contenedor */
   min-height: 100%; /* Establece una altura mínima para evitar que se haga pequeño */
   display: flex;
